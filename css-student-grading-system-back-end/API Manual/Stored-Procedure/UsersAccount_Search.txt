@@ -1,0 +1,5 @@
+CREATE DEFINER=`root`@`localhost` PROCEDURE `UsersAccount_Search`(_UserID INT, _Username VARCHAR(100), _Email VARCHAR(100))
+BEGIN
+   Select  *   FROM (SELECT Record_ID, Users_Info, Time_Stamp, UPPER(Users_Info) AS CapUserInfo FROM Users_account) AS MyTable  
+     Where CapUserInfo->>'$.USERNAME'  = UPPER(_Username) OR  Record_ID  =  _UserID OR CapUserInfo->>'$.EMAILADDRESS' = UPPER(_Email);
+  END

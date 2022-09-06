@@ -1,0 +1,51 @@
+USE mvc_framework;
+  
+ DROP PROCEDURE IF EXISTS UsersAccount_Update;
+   
+
+ 
+
+
+CREATE PROCEDURE UsersAccount_Update(IN _UserId BIGINT,  IN _UserInfo LONGTEXT, IN _Timestamp TIMESTAMP)
+   
+BEGIN
+   
+     IF EXISTS(Select * From Users_Account) THEN 
+    
+        BEGIN 
+	  
+         IF(_UserId>=1000) THEN
+	       
+           BEGIN
+           
+            INSERT INTO Users_Account(Record_ID, Users_Info,  Time_Stamp) Values(_UserId,  _UserInfo, _Timestamp) 
+                   ON DUPLICATE KEY UPDATE Users_Info=VALUES(Users_Info), Time_Stamp=VALUES(Time_Stamp); 
+         
+            END;
+    
+          ELSE
+	       
+            BEGIN 
+            
+             INSERT INTO Users_Account(Record_ID, Users_Info, Time_Stamp) Values(0, _UserInfo, _Timestamp);
+
+            END;  
+     
+          END IF;		
+    
+       END; 
+   
+       ELSE
+      
+         BEGIN 
+        
+          INSERT INTO Users_Account(Record_ID, Users_Info, Time_Stamp) Values(1000,  _UserInfo,  _Timestamp);
+      
+         END;  
+  
+       END IF;
+    
+    
+     SELECT Record_ID FROM Users_Account ORDER BY Record_ID DESC LIMIT 1;
+  
+    END 

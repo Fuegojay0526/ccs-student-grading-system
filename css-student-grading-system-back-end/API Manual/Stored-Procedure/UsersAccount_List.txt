@@ -1,0 +1,13 @@
+USE mvc_framework;
+
+  DROP PROCEDURE IF EXISTS UsersAccount_List;
+
+ 
+  
+  CREATE PROCEDURE UsersAccount_List()
+  
+    BEGIN
+   
+     Select * FROM Users_account order by Record_ID ASC;
+  
+   END
