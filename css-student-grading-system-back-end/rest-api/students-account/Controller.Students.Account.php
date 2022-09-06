@@ -9,7 +9,7 @@
       
 	if(strtoupper($Method)=="POST")
 	   {
-	    if(strtoupper($ObjData->Request)=="LOGIN")        	    	{ Students_Account::LoginUser($ObjData->Record); }
+	    if(strtoupper($ObjData->Request)=="LOGIN")        	    	{ Students_Account::LoginStudent($ObjData->Record); }
 	    else if(strtoupper($ObjData->Request)=="CHANGE-PASSWORD")	{ Students_Account::ChangePassword($ObjData->Record); }
 	    else{echo "Error:Unknown Request<BR/>";}
 	   }

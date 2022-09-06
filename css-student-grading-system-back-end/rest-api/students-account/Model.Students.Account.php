@@ -6,12 +6,12 @@
  
 	class Student_Account{
 			  
-		static function LoginUser($Record)
+		static function LoginStudent($Record)
 		  {    
 		         $Record->Password = Cryptography::EncryptData($Record->Password, Configuration::$Cipher["Key"]);
 		      	 $Login=  Array($Record->Username, $Record->Password);
 		 
-		         $Result = PDO_MySQL::ExecuteQuery(Configuration::$DBase, "Call UsersAccount_Login(?,?)", $Login);
+		         $Result = PDO_MySQL::ExecuteQuery(Configuration::$DBase, "Call StudentsAccount_Login(?,?)", $Login);
 		 
 		  if ($Result=="[]"){
 			 echo json_encode(Array("Status"=> "Error: The User's Account was not found or Inactive."));
@@ -24,7 +24,7 @@
 				    echo  json_encode($Obj_Result[0]->Users_Info);
 				}
 		  }	
-     //------------------------------------------------------------------------------------------------------------------------------		  
+     //End of Function LoginStudent	  
 		static function ChangePassword($Record)
 		  {     
 		         $Record->NewPassword = Cryptography::EncryptData($Record->NewPassword, Configuration::$Cipher["Key"]);
@@ -32,7 +32,7 @@
 		         $Data=  Array($Record->Username, $Record->OldPassword);
 		         
 				 
-				 $Result = PDO_MySQL::ExecuteQuery(Configuration::$DBase, "Call UsersAccount_Login(?,?)", $Data);
+				 $Result = PDO_MySQL::ExecuteQuery(Configuration::$DBase, "Call StudentsAccount_Login(?,?)", $Data);
 		 
 		      if ($Result=="[]"){
 				    echo json_encode(Array("Status"=> "Error: The User's current password does not match to their record."));
@@ -45,7 +45,7 @@
 				
 		 }
 				 
-	 //------------------------------------------------------------------------------------------------------------------------------		  
+	 //End of function ChangePassword	  
 		static function UsersList()
 		  {  $Result = PDO_MySQL::ExecuteQuery(Configuration::$DBase, "Call UsersAccount_List()");
 		 
