@@ -18,10 +18,10 @@
 	       }
 		 else{       
 				    $Obj_Result = json_decode($Result);
-				    $Obj_Result[0]->Users_Info->Record_ID = $Obj_Result[0]->Record_ID;
-					$Obj_Result[0]->Users_Info->Identity = $Obj_Result[0]->Identity;
+				    $Obj_Result[0]->Students_Info->Record_ID = $Obj_Result[0]->Record_ID;
+					$Obj_Result[0]->Students_Info->Identity = $Obj_Result[0]->Identity;
 					
-				    echo  json_encode($Obj_Result[0]->Users_Info);
+				    echo  json_encode($Obj_Result[0]->Students_Info);
 				}
 		  }	
      //End of Function LoginStudent	  
@@ -39,23 +39,13 @@
 					return;
 	              }
 		    else{   $Data=  Array($Record->RecordID, $Record->NewPassword); 
-				    $Result = PDO_MySQL::ExecuteQuery(Configuration::$DBase, "Call UsersAccount_UpdatePassword(?,?)", $Data);
+				    $Result = PDO_MySQL::ExecuteQuery(Configuration::$DBase, "Call StudentsAccount_UpdatePassword(?,?)", $Data);
 		             echo json_encode(Array("Status"=> "New Password was successfully Applied")); 
 				}
 				
 		 }
 				 
-	 //End of function ChangePassword	  
-		static function UsersList()
-		  {  $Result = PDO_MySQL::ExecuteQuery(Configuration::$DBase, "Call UsersAccount_List()");
-		 
-		  if ($Result=="[]"){
-			 echo json_encode(Array("Status"=> "Error: No Record Found."));
-	       }
-		 else{ echo $Result; }
-		  }
-		  
-	 //------------------------------------------------------------------------------------------------------------------------------	  
+	 //End of function ChangePassword	    
 		  
 	}
 	

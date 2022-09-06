@@ -89,6 +89,8 @@
 			    { $URL.= "/rest-api/users-account/Controller.Users.Account.php";}
 			  else if(strtoupper($Requested_Module) == "API-KEY")
 			    { $URL.= "/rest-api/api-key/Controller.Api.Key.php";} 
+				else if(strtoupper($Requested_Module) == "STUDENTS-ACCOUNT")
+			    { $URL.= "/rest-api/students-account/Controller.Students.Account.php";} 
 			
 			 else{$Requested_Module ="NONE"; }
 			
@@ -108,11 +110,13 @@
 		           $Context  = stream_context_create($Options);
 			     
 				                                                           //Verified or Accepted Request.
-				          do {$Response = trim(file_get_contents($URL, false, $Context));                    //Request URL Page to open.
+				          do {$Response = trim(file_get_contents($URL, false, $Context));                    
+							//Request URL Page to open.
 			                 } while ($Response=="");
 							  
 							  if(strtoupper($Requested_Process)=="LOGIN")
-								   {  if(str_contains(StrtoUpper($Response), 'ERROR')==false)
+								   {  
+									if(str_contains(StrtoUpper($Response), 'ERROR')==false)
 									      {
 									       $UserAccount = Cryptography::Encode_Base64url($Response); 
 										   $Response = json_encode(Array("Status"=> "Login was successful.")); 
@@ -128,9 +132,9 @@
 		                              header("Expires: Sat, 13 Jan 1979 05:00:00 GMT");
                                       header("Cache-Control: no-cache");
                                       header("Pragma: no-cache");
-									  header("Developer: CODERSTATION Technology and Service Innovator");
+									  header("Developer: Jay Fuego");
                                       header("Provider: " . Configuration::$Application["Issuer"]);
-									  header("Web-Application: Sample MVC-Framework");
+									  header("Web-Application: CCS Student Grading System");
 				                      header("Authorization: Bearer $JWToken");
 					     
 				 }  
