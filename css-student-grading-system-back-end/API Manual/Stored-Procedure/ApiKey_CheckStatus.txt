@@ -1,8 +1,0 @@
-USE mvc_framework;
-DROP PROCEDURE IF EXISTS ApiKey_CheckStatus;
-
- CREATE PROCEDURE ApiKey_CheckStatus(IN _Identity LONGTEXT, IN _ApiKeyCode LONGTEXT)
-  BEGIN
-   Select Record_ID, API_Key_Info, API_Key_Code, Time_Stamp FROM Api_Key
-	  Where API_Key_Info->>'$.Identity'  = _Identity and  API_Key_Code  =  _ApiKeyCode;
-  END

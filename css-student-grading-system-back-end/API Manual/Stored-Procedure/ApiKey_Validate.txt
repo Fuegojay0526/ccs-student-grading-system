@@ -1,7 +1,0 @@
-USE mvc_framework;
-DROP PROCEDURE IF EXISTS ApiKey_Validate;
-
- CREATE PROCEDURE ApiKey_Validate(IN _ApiKeyCode LONGTEXT, IN _Identity LONGTEXT)
-  BEGIN
-   SELECT API_Key_Info->>'$.Status' As Status FROM  API_Key where API_Key_Code  =  _ApiKeyCode and API_Key_Info->>'$.Identity' = _Identity;
-  END

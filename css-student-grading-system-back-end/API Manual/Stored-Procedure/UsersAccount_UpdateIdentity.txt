@@ -1,7 +1,0 @@
-USE mvc_framework;
- DROP PROCEDURE IF EXISTS UsersAccount_UpdateIdentity;
-    
-CREATE PROCEDURE UsersAccount_UpdateIdentity(IN _Record_ID BIGINT, IN _Identity LONGTEXT)
-  BEGIN
-    UPDATE Users_Account SET Identity =  _Identity WHERE  Record_ID =_Record_ID ;
-  END
