@@ -7,7 +7,7 @@
 									 "Port"		=> "3306",
 									 "Username"	=> "root", 
 									 "Password"	=> "",
-									 "DBName"	=> "mvc-framework");
+									 "DBName"	=> "grading-system");
 									 
 	    public static $Server = array("TimeZone" => "Asia/Manila");
 		
