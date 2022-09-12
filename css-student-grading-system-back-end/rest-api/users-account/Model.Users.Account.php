@@ -94,7 +94,7 @@
 				 $Record->OldPassword = Cryptography::EncryptData($Record->OldPassword, Configuration::$Cipher["Key"]);
 		         $Data=  Array($Record->Username, $Record->OldPassword);
 		         
-				 
+				  
 				 $Result = PDO_MySQL::ExecuteQuery(Configuration::$DBase, "Call UsersAccount_Login(?,?)", $Data);
 		 
 		      if ($Result=="[]"){

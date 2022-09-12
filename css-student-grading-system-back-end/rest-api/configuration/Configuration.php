@@ -12,6 +12,7 @@
 	    public static $Server = array("TimeZone" => "Asia/Manila");
 		
 		public static $Cipher = array("Key" => "#MyS3CR3T#",
+										"Key1"=>"Secrete",
 		                              "JwtExpiration" => 300,
 									  "ApiKey_HashDifficulty" => 2,
                                       "Identity_HashDifficulty" => 3 									  
