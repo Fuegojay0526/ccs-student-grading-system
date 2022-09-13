@@ -88,10 +88,7 @@
 			  if(strtoupper($Requested_Module) == "USERS-ACCOUNT")
 			    { $URL.= "/rest-api/users-account/Controller.Users.Account.php";}
 			  else if(strtoupper($Requested_Module) == "API-KEY")
-			    { $URL.= "/rest-api/api-key/Controller.Api.Key.php";} 
-				else if(strtoupper($Requested_Module) == "STUDENTS-ACCOUNT")
-			    { $URL.= "/rest-api/students-account/Controller.Students.Account.php";} 
-			
+			    { $URL.= "/rest-api/api-key/Controller.Api.Key.php";}
 			 else{$Requested_Module ="NONE"; }
 			
 			//End//- Assign for page Controller 
