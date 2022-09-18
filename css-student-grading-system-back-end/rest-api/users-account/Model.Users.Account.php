@@ -119,7 +119,33 @@
 		  }
 		  
 	 //------------------------------------------------------------------------------------------------------------------------------	  
-		  
+		  static function Grade($Record)
+		  {
+			$GradeRequest = $Record->GradeRequest;
+			$Request = Array(strval($GradeRequest), strval($GradeRequest));
+			$Result = PDO_MySQL::ExecuteQuery(Configuration::$DBase, "Call Show_Grades(?,?)",$Request);
+			
+			if ($Result=="[]"){
+				echo json_encode(Array("Status"=> "No Data Found!"));
+			}else{
+					$Obj_Result = json_decode($Result);
+
+					echo json_encode($Obj_Result[0]->Users_Info);
+				}
+		  }
+		  static function Program($Record)
+		  {
+			$ProgramName = $Record->ProgramName;
+			$Request_Program = Array(strval($ProgramName));
+			$Result = PDO_MySQL::ExecuteQuery(Configuration::$DBase, "Call Program_Name_Request(?)",$Request_Program);
+			if ($Result=="[]"){
+				echo json_encode(Array("Status"=> "No Data"));
+			}else{
+				$Obj_Result = json_decode($Result);
+
+				echo json_encode($Obj_Result[0]->Users_Info);
+			}
+		  }
 	}
 	
 	?>

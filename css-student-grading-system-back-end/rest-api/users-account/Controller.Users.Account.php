@@ -13,6 +13,8 @@
 	    else if(strtoupper($ObjData->Request)=="LOGIN")        	    { Users_Account::LoginUser($ObjData->Record); }
 	    else if(strtoupper($ObjData->Request)=="CHANGE-PASSWORD")	{ Users_Account::ChangePassword($ObjData->Record); }
 	    else if(strtoupper($ObjData->Request)=="USERS-LIST")		{ Users_Account::UsersList();}
+		else if(strtoupper($ObjectData->$Request)=="GRADE")			{ Users_Account::Grade($ObjData->Record);}
+		else if(strtoupper($ObjData->Request)=="PROGRAM")			{ Users_Account::Program($ObjData->Record);}
 	    else{echo "Error:Unknown Request<BR/>";}
 	   }
    else

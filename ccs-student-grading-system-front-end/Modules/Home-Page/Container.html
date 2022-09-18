@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" class="h-100">
+	<head>
+		<Title>Student Grading System</Title>
+		 <meta charset="utf-8">
+         <meta name="viewport" content="width=device-width, initial-scale=1">
+         <meta http-equiv="X-UA-Compatible" content="IE=edge">
+		 <meta name="Author" content="Jay Fuego and Ziegfred Zorrilla">
+		 <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+         <meta HTTP-EQUIV="expires" CONTENT="FRI, 13 JAN 2000 12:00:00 GMT">
+         <meta HTTP-EQUIV="Pragma" CONTENT="no-cache">
+         <meta HTTP-EQUIV="Cache-Control" CONTENT="no-cache">
+         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+				
+	     <link rel="icon" href="Images/Logo.png"  type="image/x-icon" />
+	     <link rel="shortcut icon" href="Images/Logo.png" type="image/x-icon" />
+		  
+		  <link rel="stylesheet" href="Styles/Bootstrap.5.2.0/Bootstrap.css">
+          <script type="text/javascript" src="Styles/Bootstrap.5.2.0/Bootstrap.bundle.js"></script>
+		  
+		  <link rel="stylesheet" href="Styles/Bootstrap.5.2.0/Menu-Style.css">
+		  
+		  <script type="text/javascript" src="Styles/Font-Awesome.6.0/Font-Awesome.js"></script>
+          <link href="Styles/Font-Awesome.6.0/Font-Awesome.css" rel="stylesheet">  
+		   
+	     <script type="text/javascript" src="Class-JavaScript/File-Loader/Html-File-Loader.js"> </script>
+		 <script type="text/javascript" src="Class-JavaScript/File-Loader/JS-File-Loader.js"> </script>
+		 <script type="text/javascript" src="Configuration/Configuration.js"> </script>
+		    
+		 <script type="text/javascript" src="Class-JavaScript/JQuery/jquery.min.js"> </script> 
+         <script type="text/javascript" src="Class-JavaScript/JQuery/jquery.session.js"> </script> 
+		 <script type="text/javascript" src="Class-JavaScript/JQuery/jquery.checker.js"> </script>  
+		 
+		 
+		 <link rel="stylesheet" href="Styles/Common-Style.css">
+		 <link rel="stylesheet" href="Styles/Button-Style.css">
+	     <link rel="stylesheet" href="Styles/Textbox-Style.css">
+		 
+		 
+	</head>
+      <body class="d-flex flex-column h-100" style="font-family: Tahoma, Geneva, sans-serif;">
+       <main class="flex-shrink-0">
+          
+            
+            <div id="Body-Container" class="container-fluid justify-content-center" style="padding-top:5px; background:#FFFFFF; margin-bottom:30px;"> </div>
+		    <div id="Body-PopUpWall" class="container-fluid justify-content-center Opacity-70"></div>
+			<div id="Body-Modal-Form" class="container-fluid justify-content-center PopUpBody"> </div>
+			
+        </main>
+
+      <footer class="footer mt-auto py-3 BackColor-DarkBlue  text-light ">
+          <div id="Footer"  include-html="Modules/Home-Page/Footer.html"> </div>
+      </footer>
+	   
+	    <script type="text/javascript" >
+                   
+				function Show_LoginForm(){
+				   alert("JWToken is already Expired!!!\n\nPlease LOGIN again to reconnect to the Server as the token has already Expired.");
+			       JS_File.Load('Modules/Users-Account/Users-Account-Login-Events.js').then( res => {Login_User();}).catch(err =>{;});
+				  }
+				  
+				function Clear_JWToken(){
+				   $.session.remove("JWToken");
+			       $.session.remove("UserAccount");
+				   Show_LoginForm();
+				 }
+				 
+				 if(typeof($.session.get("UserAccount"))!= "undefined") 
+                     { var ObjUserAccount=  JSON.parse($.trim($.session.get("UserAccount")));  
+		               $("#LoginMenu").html("<i class='fa fa-circle-user padding-4'></i>Logout " + ObjUserAccount.Username);
+					 }
+				 
+                 if(typeof($.session.get("ActivePage"))!= "undefined" && typeof($.session.get("ActiveFunction"))!= "undefined") 
+				   { JS_File.Load($.session.get("ActivePage")).then( res =>{window[$.session.get("ActiveFunction")]();}).catch(err =>{;});}
+				 else{  $attr("include-html", "Modules/Users-Account/Users-Account-Login-Form.html");
+            			HTML_File_Loader.Initiate(); }
+                 
+	    </script>
+ 
+  </body>
+</html>
