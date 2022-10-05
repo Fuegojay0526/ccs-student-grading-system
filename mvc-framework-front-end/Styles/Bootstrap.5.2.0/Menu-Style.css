@@ -1,0 +1,61 @@
+ 
+.padding-4 {padding-left:4px; padding-right:4px;}
+
+.toggle-white{ color: #FFFFFF !important;}
+
+.nav-item .nav-link, .navbar-right .nav-link, .nav-item .dropdown-item{
+    color: #FFFFFF !important;
+	font-weight: 600 !important; font-size:14px;
+	font-family: Tahoma, Geneva, sans-serif !important;
+	
+ }
+ 
+.nav-item .nav-link:hover, .navbar-right .nav-link:hover, .nav-item .dropdown-item:hover {
+     color: #FFFFFF  !important;
+	 font-weight: 600 !important;
+     -moz-border-radius:6px;  webkit-border-radius:6px; border-radius:6px;
+     background: -webkit-linear-gradient(top,#4682B4 1px, #4682B4 1px,#191970 100%)!important;
+	 background: -moz-linear-gradient(top,#4682B4 1px, #4682B4 1px,#191970 100%)!important;
+	 background: -o-linear-gradient(top,#4682B4 1px, #4682B4 1px,#191970 100%)!important;
+     background: -ms-linear-gradient(top,#4682B4 1px, #4682B4 1px,#191970 100%)!important;
+     background: linear-gradient(top,#4682B4 1px, #4682B4 1px,#191970 100%)!important;
+	 
+}
+  
+  
+.nav-item .nav-link:active, .navbar-right .nav-link:active, .nav-item .dropdown-item:active {
+     color: #FFFFFF  !important; font-weight: 600 !important; 
+     -moz-border-radius:6px;  webkit-border-radius:6px; border-radius:6px;
+     background: -webkit-linear-gradient(top,#191970 1px, #191970 1px,#4682B4 100%)!important;
+	 background: -moz-linear-gradient(top,#191970 1px, #191970 1px,#4682B4 100%)!important;
+	 background: -o-linear-gradient(top,#191970 1px, #191970 1px,#4682B4 100%)!important;
+     background: -ms-linear-gradient(top,#191970 1px, #191970 1px,#4682B4 100%)!important;
+     background: linear-gradient(top,#191970 1px, #191970 1px,#4682B4 100%)!important;
+	 
+}
+  
+.nav-item .dropdown-menu{ color:#FFFFFF!important;
+	 background: -webkit-linear-gradient(top,#00008B 1px, #4682B4 1px,#191970 100%)!important;
+     background: -moz-linear-gradient(top,#00008B 1px, #4682B4 1px,#191970 100%)!important;
+	 background: -o-linear-gradient(top,#00008B 1px, #4682B4 1px,#191970 100%)!important;
+	 background: -ms-linear-gradient(top,#00008B 1px, #4682B41px,#191970 100%)!important;
+	 background: linear-gradient(top,#00008B 1px, #4682B4 1px,#191970 100%)!important;
+}
+
+.nav-item .disabled{
+    color: #CCCCCC !important;
+	 
+}
+ 
+.navbar-brand{
+	color: #FFFFFF !important;
+	font-weight: bold !important;
+    text-shadow: 0px 4px 3px rgba(0,0,0,0.4),
+             0px 8px 13px rgba(0,0,0,0.1),
+             0px 18px 23px rgba(0,0,0,0.1);
+}
+
+.menu-logo{
+	 position:relative; height:37px; 
+	  width:38px; top:-2px;
+}

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en" class="h-100">
+	<head>
+		<Title>ccs student grading system</Title>
+			<meta charset="utf-8">
+			<meta name="viewport" content="width=device-width, initial-scale=1">
+			<meta http-equiv="X-UA-Compatible" content="IE=edge">
+			<meta name="Author" content="Jay Fuego & Ziegfred Zorrilla">
+			<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+			<meta HTTP-EQUIV="expires" CONTENT="FRI, 13 JAN 2000 12:00:00 GMT">
+			<meta HTTP-EQUIV="Pragma" CONTENT="no-cache">
+			<meta HTTP-EQUIV="Cache-Control" CONTENT="no-cache">
+			<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+					
+			<link rel="icon" href="Images/favicon.ico"  type="image/x-icon" />
+			<link rel="shortcut icon" href="Images/favicon.ico" type="image/x-icon" />
+			
+			<link rel="stylesheet" href="Styles/Bootstrap.5.2.0/Bootstrap.css">
+			<script type="text/javascript" src="Styles/Bootstrap.5.2.0/Bootstrap.bundle.js"></script>
+			
+			<link rel="stylesheet" href="Styles/Bootstrap.5.2.0/Menu-Style.css">
+			
+			<script type="text/javascript" src="Styles/Font-Awesome.6.0/Font-Awesome.js"></script>
+			<link href="Styles/Font-Awesome.6.0/Font-Awesome.css" rel="stylesheet">  
+			<script src="https://cdn.tailwindcss.com"></script> 
+			<script type="text/javascript" src="Class-JavaScript/File-Loader/Html-File-Loader.js"> </script>
+			<script type="text/javascript" src="Class-JavaScript/File-Loader/JS-File-Loader.js"> </script>
+			<script type="text/javascript" src="Configuration/Configuration.js"> </script>
+			<script type="text/javascript" src="Configuration/Session-Checker.js"> </script>
+			<script type="text/javascript" src="Class-JavaScript/JQuery/jquery.min.js"> </script> 
+			<script type="text/javascript" src="Class-JavaScript/JQuery/jquery.session.js"> </script> 
+			<script type="text/javascript" src="Class-JavaScript/JQuery/jquery.checker.js"> </script>  
+			<script
+			src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js"
+			defer> </script>
+			<script src="https://cdn.tailwindcss.com"></script>
+			<link rel="stylesheet" href="Styles/Common-Style.css">
+			<link rel="stylesheet" href="Styles/Button-Style.css">
+			<link rel="stylesheet" href="Styles/Textbox-Style.css">
+			
+		 
+	</head>
+      	<body style="font-family: Tahoma, Geneva, sans-serif;">
+		<div class="flex h-screen bg-gray-50 dark:bg-gray-900"
+      	:class="{ 'overflow-hidden': isSideMenuOpen }">
+		<aside class="w-64" aria-label="Sidebar">
+		<nav id="System-Menu" aria-label="System Menu" include-html="Modules/Home-Page/Header.html"></nav>
+		</aside>
+		<div class="flex flex-col flex-1 w-full">
+			<nav include-html="Modules/Home-Page/Top-Nav.html"></nav>
+			<main class="h-full overflow-y-auto">
+            	<div id="Body-Container" class="overflow-y-auto pt-0 py-4 px-3 bg-gray-50 rounded dark:bg-gray-800"> </div>   
+            	<div id="Body-PopUpWall" class="container-fluid justify-content-center Opacity-70"></div>
+				<div id="Body-Modal-Form" class="container-fluid justify-content-center PopUpBody"> </div>
+        	</main>
+		</div>
+		</div>
+	    <script type="text/javascript" >
+                   
+				function Show_LoginForm()
+					{
+			       		JS_File.Load('Modules/Users-Account/Users-Account-Login-Events.js').then( res => {Login_User();}).catch(err =>{;});
+				  	}
+				  
+				function Clear_JWToken()
+				{
+				   	$.session.remove("JWToken");
+			       	$.session.remove("UserAccount");
+			       	$("#LoginMenu").html("<i class='fa fa-user-lock padding-4'></i>Login");
+				  	Show_LoginForm();
+				}
+				 
+				 if(typeof($.session.get("UserAccount"))!= "undefined") 
+                     { 
+						$("#LoginMenu").html(" <button class='align-middle rounded-full focus:shadow-outline-purple focus:outline-none'aria-haspopup='true'> <img class='object-cover w-8 h-8 rounded-full' src='Images/favicon.ico' aria-hidden='true'/></button><p type='hidden'Logout</p>");
+					 }
+				 
+                 if(typeof($.session.get("ActivePage"))!= "undefined" && typeof($.session.get("ActiveFunction"))!= "undefined") 
+				    { 
+					 	JS_File.Load($.session.get("ActivePage")).then( res =>{window[$.session.get("ActiveFunction")]();}).catch(err =>{;}); 
+					}
+				 	else
+						{  
+							$("#Body-Container").attr("include-html", "Modules/Home-Page/Home-Page.html");
+            				HTML_File_Loader.Initiate(); 
+						}
+
+
+						
+					CheckSession();
+
+				
+	    </script>
+ 
+  </body>
+</html>

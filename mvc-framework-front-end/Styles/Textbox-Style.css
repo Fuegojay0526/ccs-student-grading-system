@@ -1,0 +1,31 @@
+
+.Textbox-Style{position:relative;  color: #191970; -moz-border-radius:6px;  webkit-border-radius:6px; border-radius:6px;  
+               font-weight:bold !important; font-size:14px;
+	           font-family: Tahoma, Geneva, sans-serif !important; background-color:#FFFFFF;
+             } 
+
+.Textbox-Style:hover{position:relative;  color: #4B0082;  background-color:#FFFAF0;} 
+.Textbox-Style:focus{position:relative;  color: #00008B;  background-color:#FFF8DC;}
+
+
+.Textbox-Disabled{position:relative;  color: #85929E; -moz-border-radius:6px;  webkit-border-radius:6px; border-radius:6px;  
+                  font-weight:bold !important; font-size:14px;
+	              font-family: Tahoma, Geneva, sans-serif !important; background-color:#F2F3F4;
+                 } 
+
+.Textbox-Disabled:hover{position:relative;  color: #5D6D7E;  background-color:#F4F6F6;} 
+.Textbox-Disabled:focus{position:relative;  color: #5D6D7E;  background-color:#F2F3F4;}
+
+
+.Label-Caption{ font-weight: 600 !important; font-size:14px;
+                font-family: Tahoma, Geneva, sans-serif;
+				color: #2C3E50; background:  #95A5A6;
+				-webkit-background-clip: text;
+				-moz-background-clip: text;
+				background-clip: text;
+				text-shadow: 0px 3px 3px rgba(255,255,255,0.8);
+				background: #F4F6F6;
+              }
+
+.Min-Width-125{ min-width:125px;}
+.Min-Width-150{ min-width:150px;}

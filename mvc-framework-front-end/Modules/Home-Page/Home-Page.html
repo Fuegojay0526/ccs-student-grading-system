@@ -1,0 +1,148 @@
+
+  <!--Content Here-->
+  <div class="container px-6 pt-0 mx-auto grid">
+    <h2
+      class="my-6 text-2xl font-semibold text-gray-700 dark:text-gray-200"
+    >
+      Add Subject
+    </h2>
+    <!-- CTA -->
+   
+    <!-- General elements -->
+   
+    <form method="POST" asp-page-handler="Save" class="px-4 py-3 mb-8 bg-white rounded-lg shadow-md dark:bg-gray-800 grid grid-cols-2 gap-x-3">
+        <label class="block text-sm col-span-2 md:col-span-1">
+            <span class="text-gray-700 dark:text-gray-400"></span>
+            <input
+            class="block w-full md:w-1/2 mt-1 text-lg rounded-md border-2 border-gray-600
+             focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+            placeholder="CC 101" asp-for="SubjectForm.CodeNo"
+            />
+            <span asp-validation-for="SubjectForm.CodeNo" class="text-xs text-red-600 dark:text-red-400"></span>
+            
+        </label>
+        <label class="mt-4 block text-sm col-span-2">
+            <span class="text-gray-700 dark:text-gray-400">Descriptive Title</span>
+            <input
+            class="block w-full mt-1 text-lg rounded-md border-2 border-gray-600
+            focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+            placeholder="Introduction to Programming" asp-for="SubjectForm.DescriptiveTitle"
+            />
+            <span asp-validation-for="SubjectForm.DescriptiveTitle" class="text-xs text-red-600 dark:text-red-400">
+            </span>
+        </label>
+        <label class="block mt-4 text-sm col-span-2 md:col-span-1">
+            <span class="text-gray-700 dark:text-gray-400">
+            Units
+            </span>
+            <select
+            asp-for="SubjectForm.Units"
+            asp-items="Model.SelectUnits"
+            class="block w-full mt-1 text-sm dark:text-gray-300 dark:border-gray-600 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray"
+            aria-placeholder="Units"
+            >
+            </select>
+            <span asp-validation-for="SubjectForm.Units" class="text-xs text-red-600 dark:text-red-400">
+            </span>
+        </label>
+        <label class="block mt-4 text-sm col-span-2 md:col-span-1">
+            <span class="text-gray-700 dark:text-gray-400">
+            Class Type
+            </span>
+            <select
+                asp-for="SubjectForm.ClassType"
+                asp-items="Model.SubjectTypes"
+            class="block w-full mt-1 text-sm dark:text-gray-300 dark:border-gray-600 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray"
+            >
+            </select>
+            <span asp-validation-for="SubjectForm.ClassType" class="text-xs text-red-600 dark:text-red-400">
+            </span>
+        </label>
+        
+        <label class="block mt-4 text-sm col-span-2 md:col-span-1">
+            <span class="text-gray-700 dark:text-gray-400">
+            Program
+            </span>
+            <select
+                asp-for="SubjectForm.ProgramId"
+                asp-items="Model.SelectPrograms"
+            class="block w-full mt-1 text-sm dark:text-gray-300 dark:border-gray-600 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray"
+            >
+            </select>
+            <span asp-validation-for="SubjectForm.ProgramId" class="text-xs text-red-600 dark:text-red-400">
+            </span>
+        </label>
+        <label class="block mt-4 text-sm col-span-2 md:col-span-1">
+            <span class="text-gray-700 dark:text-gray-400">
+            Year
+            </span>
+            <select
+                asp-for="SubjectForm.Year"
+                asp-items="Model.SelectYears"
+            class="block w-full mt-1 text-sm dark:text-gray-300 dark:border-gray-600 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray"
+            >
+            </select>
+            <span asp-validation-for="SubjectForm.Year" class="text-xs text-red-600 dark:text-red-400">
+            </span>
+        </label>
+        <label class="block mt-4 text-sm col-span-2 md:col-span-1">
+            <span class="text-gray-700 dark:text-gray-400">
+            Semester
+            </span>
+            <select
+            asp-for="SubjectForm.Semester"
+            asp-items="Model.SelectSemesters"
+            class="block w-full mt-1 text-sm dark:text-gray-300 dark:border-gray-600 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray"
+            >
+            </select>
+            <span asp-validation-for="SubjectForm.Semester" class="text-xs text-red-600 dark:text-red-400">
+            </span>
+        </label>
+        <label class="block mt-4 text-sm col-span-2 md:col-span-1">
+            <span class="text-gray-700 dark:text-gray-400">
+            Prerequisite Type
+            </span>
+            <select
+            asp-items="Model.PrerequisiteTypes"
+            asp-for="SubjectForm.PrerequisiteType"
+            class="block w-full mt-1 text-sm dark:text-gray-300 dark:border-gray-600 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray"
+            >
+            </select>
+            <span asp-validation-for="SubjectForm.PrerequisiteType" class="text-xs text-red-600 dark:text-red-400">
+            </span>
+        </label>
+        
+        <label id="preSubjectCodes" class="pre block mt-4 text-sm hidden col-span-2 md:col-span-1">
+            <span class="text-gray-700 dark:text-gray-400">
+            Subject Codes
+            </span>
+            <select
+            asp-for="SubjectForm.PrerequisiteSubjectIds"
+            asp-items="Model.SubjectCodes"
+            class="block w-full mt-1 text-sm dark:text-gray-300 dark:border-gray-600 form-multiselect focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray"
+            multiple
+            >
+            </select>
+            <span asp-validation-for="SubjectForm.PrerequisiteSubjectIds" class="text-xs text-red-600 dark:text-red-400">
+            </span>
+        </label>
+        <label id="prePercentage" class="pre block mt-4 text-sm hidden col-span-2 md:col-span-1">
+            <span class="text-gray-700 dark:text-gray-400">Total Units</span>
+            <input
+            asp-for="SubjectForm.PrerequisitePercentage"
+            type="number"
+            class="block w-full md:w-1/2 mt-1 text-sm dark:border-gray-600 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+            />
+            <span asp-validation-for="SubjectForm.PrerequisitePercentage" class="text-xs text-red-600 dark:text-red-400">
+            </span>
+        </label>
+        <div class="flex justify-end mt-5 col-span-2">
+            <button type="submit"
+            class="flex items-center justify-between  px-4 py-2 text-sm font-medium leading-5 text-white transition-colors duration-450 bg-purple-800 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple"
+            >
+            Add Subject
+            </button>
+        </div>
+    </form>
+</div>
+

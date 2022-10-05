@@ -1,0 +1,64 @@
+ <div class="container-fluid d-flex justify-content-center align-items-center" style="width:100%;">
+   <div class="row d-flex justify-content-center align-items-center" style="width:100%; max-width:750px;">
+      
+     <div Id= "ApiKeyForm" class="container DivFrame" style="padding:0px;">
+     <div class="FrameHeader BackColor-DarkBlue"><i class="fa fa-microchip padding-4"></i>&nbsp;Register Application</div>
+	 
+	  <div  style="padding:20px;">	 
+	   <div class="row mb-1">
+          <div class="col-md">
+		     <div class="input-group">
+		       <span class="input-group-text Min-Width-150 Label-Caption">Record ID</span>
+               <input ReadOnly type="text" class="form-control Textbox-Disabled" value="0000" id="ApiKeyForm_TxtRecordID">
+			</div>
+		  </div>
+         </div>
+       
+	   <div class="row mb-1">
+          <div class="col-md">
+		     <div class="input-group">
+		       <span class="input-group-text Min-Width-150 Label-Caption">Identity</span>
+               <input ReadOnly type="text" class="form-control Textbox-Disabled" id="ApiKeyForm_TxtIdentity">
+			</div>
+		  </div>
+         </div>
+		 
+		 <div class="row mb-2">
+          <div class="col-md">
+		     <div class="input-group">
+		       <span class="input-group-text Min-Width-150 Label-Caption">Status</span>
+               <select class="form-select Textbox-Style" id="ApiKeyForm_TxtStatus">
+				  <option> </option>
+				  <option>Active</option>
+				  <option>Inactive</option>
+				  </select>
+			</div>
+		  </div>
+         </div>
+		 
+		 <div class="row mb-1">
+          <div class="col-md">
+		     <div class="input-group">
+		       <span class="input-group-text Min-Width-150 Label-Caption">API-Key</span>
+               <input ReadOnly type="text" class="form-control Textbox-Disabled" id="ApiKeyForm_TxtApiKey">
+			</div>
+		  </div>
+         </div>
+		 
+      </div> 
+      
+	  
+	     <div class="row BackColor-DarkBlue">
+           <div class="col-md-6 mb-1">  </div>  
+		    <div class="col-md-6 mb-1" style="padding:4px; padding-right:20px; padding-left:20px;">
+		      <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                <button Id="ApiKeyForm_BntSAVE" class="btn Button-Style" type="button" style="padding-right:30px;"><i class="fa fa-floppy-disk fa-lg padding-4"></i>&nbsp;SAVE</button>
+				<button Id="ApiKeyForm_BntSEARCH" class="btn Button-Style" type="button"><i class="fa fa-magnifying-glass fa-lg padding-4"></i>&nbsp;SEARCH</button>
+              </div>
+              </div>
+		  </div>
+       </div> 
+	   
+     </div> 
+   </div> <!-- Inner row -->
+   </div> <!-- Outer container -->
