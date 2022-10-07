@@ -50,10 +50,10 @@ function Register_UsersAccount()
 						 {alert("Error: There is an empty field.!!!\n\nBefore sending the form to the server, the [" + InputChecker.split("_Txt")[1] + "] field must have a value.");}
 					 else{
 						   var ObjData= {"RecordID": $("#UsersAccountForm_TxtRecordID").val(),
-						   	  "Status" : $("UsersAccountForm_TxtStatus").val(),
+						   	  "Status" : $("#UsersAccountForm_TxtStatus").val(),
 							  "Username":  $("#UsersAccountForm_TxtUserName").val(),
-							  "Name" : $("#UsersAccountForm_Txtname").val(), 
-							  "Lastname" : $("#UsersAccountForm_TxtLastname").val(),
+							  "Name" : $("#UsersAccountForm_TxtName").val(), 
+							  "Lastname" : $("#UsersAccountForm_TxtLastName").val(),
 							  "Program" : $("#UsersAccountForm_Program").val(),
 							  "EmailAddress": $("#UsersAccountForm_TxtEmailAddress").val(), 
 							  "Password": $("#UsersAccountForm_TxtPassword").val()};  

@@ -8,7 +8,7 @@
 		 
 		static function UpdateRecord($Record)
 		  {  $MyUserID = $Record->RecordID;
-		     $Record->Password = Cryptography::EncryptData(Configuration::$Cipher["Key1"], $Record->Password, Configuration::$Cipher["Key"]);
+		    $Record->Password = Cryptography::EncryptData(Configuration::$Cipher["Key1"],$Record->Password, Configuration::$Cipher["Key"]);
 			  
 		     unset($Record->RecordID);
 			 
