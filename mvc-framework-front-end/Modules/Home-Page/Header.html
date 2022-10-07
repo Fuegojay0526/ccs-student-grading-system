@@ -1,59 +1,11 @@
 
-<!-- 
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">CCS Grading System</a>
-      <button class="navbar-toggler toggle-white" type="button" data-bs-toggle="collapse" data-bs-target="#NavbarCollapse" aria-controls="NavbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-       <i class="fa fa-bars"></i>
-      </button>
-
-      <div class="collapse navbar-collapse" id="NavbarCollapse">
-        <ul class="navbar-nav me-auto mb-2 mb-sm-0">
-          <li class="nav-item"> 
-            <a class="nav-link" aria-current="HomePage" href="#" onclick="JS_File.Load('Modules/Home-Page/Home-Event.js').then( res => {Main_Home();}).catch(err =>{;});">
-			    <i class="fa fa-house padding-4"></i>Home</a>
-          </li>
-		   
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false"> <i class="fa fa-address-book padding-4"></i>User's Account</a></a>
-            <ul class="dropdown-menu">
-              <li> <a class="dropdown-item" href="#" onclick="JS_File.Load('Modules/Users-Account/Users-Account-Events.js').then( res => {Register_UsersAccount();}).catch(err =>{;});">
-				 <i class="fa fa-user-tie padding-4"></i>&nbsp;Register User</a></li>
-              <li> <a class="dropdown-item" href="#" onclick="JS_File.Load('Modules/Users-Account/Change-Users-Password-Event.js').then( res => {Change_UserPassword();}).catch(err =>{;});">
-				 <i class="fas fa-user-shield padding-4"></i>Change Password</a></li>
-			  <li><a class="dropdown-item" href="#"  onclick="JS_File.Load('Modules/Users-Account/Users-List-Event.js').then( res => {Users_List();}).catch(err =>{;});">
-			    <i class="fa fa-user-group padding-4"></i>Users List</a></li>
-            </ul>
-          </li>
-		  <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false"> <i class="fa fa-file-invoice padding-4"></i>&nbsp;API-Key</a></a>
-            <ul class="dropdown-menu">
-              <li>  <a class="dropdown-item" href="#" onclick="JS_File.Load('Modules/Api-Key/Api-Key-Application-Events.js').then( res => {ApiKey_Application();}).catch(err =>{;});">
-			          <i class="fa fa-microchip padding-4"></i>Register Application</a></li>
-              <li><a class="dropdown-item" href="#" onclick="JS_File.Load('Modules/Api-Key/Api-Key-Validate-Events.js').then( res => {ApiKey_Validate();}).catch(err =>{;});">
-			         <i class="fa fa-calendar-check padding-4"></i>&nbsp;Validate API Key</a></li>
-            </ul>
-	  </li>
-		  
-		   <li class="nav-item">
-            <a class="nav-link disabled"><i class="fa fa-square padding-4"></i>Disabled</a>
-          </li>
-		  
-      </ul>
-		
-        <ul class="nav navbar-nav navbar-right">
-           <li><a id="LoginMenu" class="nav-link" href="#" onclick="JS_File.Load('Modules/Users-Account/Users-Account-Login-Events.js').then( res => {Login_User();}).catch(err =>{;});">
-		          <i class="fa fa-user-lock padding-4"></i>Login</a></li>
-      </ul>
-      </div>
-    </div> -->
- 
 
          <aside
-        class="z-20 hidden w-64 overflow-y-auto bg-white dark:bg-gray-800 md:block flex-shrink-0"
+        class="z-20 hidden w-64 overflow-y-auto bg-white md:block flex-shrink-0"
       >
         <div class="py-4 text-gray-500 dark:text-gray-400">
           <a
-            class="ml-6 text-lg font-bold text-gray-800 dark:text-gray-200"
+            class="ml-6 text-lg font-bold text-gray-800"
             href="#"
           >
             CCS SGS Admin
@@ -65,7 +17,7 @@
                 aria-hidden="true"
               ></span>
               <a
-                class="inline-flex items-center w-full text-sm font-semibold text-gray-800 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200 dark:text-gray-100"
+                class="inline-flex items-center w-full text-sm font-semibold text-gray-800 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
                 asp-page="/Admin/Index"
               >
                 <svg
@@ -89,7 +41,7 @@
           <ul>
             <li class="relative px-6 py-3">
               <a
-                class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
+                class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800"
                 asp-page="/Admin/Program/Index"
               >
                 
@@ -110,7 +62,7 @@
             </li>
             <li class="relative px-6 py-3">
               <a
-                class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
+                class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800"
                 asp-page="/Admin/Program/Add"
               >
                 <svg
@@ -133,7 +85,7 @@
             <li class="relative px-6 py-3">
               <a
                 asp-page="/Admin/Subject/Index"
-                class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
+                class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800"
               >
                 <svg
                   class="w-5 h-5"
@@ -147,12 +99,12 @@
                 >
                   <path d="M4 6h16M4 10h16M4 14h16M4 18h16"></path>
                 </svg>
-                <span class="ml-4">Subjects</span>
+                <span class="ml-4">Courses</span>
               </a>
             </li>
             <li class="relative px-6 py-3">
               <a
-                class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
+                class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800"
                 asp-page="/Admin/Subject/Add"
               >
                 <svg
@@ -169,13 +121,33 @@
                     d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"
                   ></path>
                 </svg>
-                <span class="ml-4">Add Subject</span>
+                <span class="ml-4">Add Course</span>
               </a>
             </li>   
             <li class="relative px-6 py-3">
+              <a
+                asp-page="/Admin/Subject/Index"
+                class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800"
+              >
+                <svg
+                  class="w-5 h-5"
+                  aria-hidden="true"
+                  fill="none"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path d="M4 6h16M4 10h16M4 14h16M4 18h16"></path>
+                </svg>
+                <span class="ml-4">Users List</span>
+              </a>
+            </li>
+            <li class="relative px-6 py-3">
               <button
-                class="inline-flex items-center justify-between w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                @@click="togglePagesMenu"
+                class="inline-flex items-center justify-between w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800"
+                .click="togglePagesMenu"
                 aria-haspopup="true"
               >
                 <span class="inline-flex items-center">
@@ -255,8 +227,8 @@
           <div class="px-6 my-6">
             <button
               class="flex items-center justify-between w-full px-4 py-2 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple"
-            >
-              Create account
+              onclick="JS_File.Load('Modules/Users-Account/Users-Account-Events.js').then( res => {Register_UsersAccount();}).catch(err =>{;});">
+              Create students account
               <span class="ml-2" aria-hidden="true">+</span>
             </button>
           </div>

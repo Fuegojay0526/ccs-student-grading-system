@@ -1,93 +1,49 @@
- 
-   <div class="container-fluid d-flex justify-content-center align-items-center" style="width:100%;">
-   <div class="row d-flex  justify-content-center align-items-center" style="width:100%; max-width:750px;">
-      
-     <div Id= "UsersAccountForm" class="container DivFrame" style="padding:0px;">
-     <div class="FrameHeader BackColor-DarkBlue"><i class="fa fa-user-tie padding-4"></i>&nbsp;Register User</div>
-	  <div  style="padding:20px;">	 
-	   <div class="row mb-1">
-          <div class="col-md">
-		     <div class="input-group">
-		       <span class="input-group-text Min-Width-125 Label-Caption">Record ID</span>
-               <input ReadOnly type="text" class="form-control Textbox-Disabled" value="0000" id="UsersAccountForm_TxtRecordID"/>
-			</div>
-		  </div>
-         </div>
-       
-	    <div class="row mb-1">
-          <div class="col-md">
-		     <div class="input-group">
-		       <span class="input-group-text Min-Width-125 Label-Caption">Name</span>
-               <input type="text" class="form-control Textbox-Style" id="UsersAccountForm_TxtName"/>
-			</div>
-		  </div>
-         </div>
-	    
-		<div class="row mb-1">
-          <div class="col-md">
-		     <div class="input-group">
-		       <span class="input-group-text Min-Width-125 Label-Caption">Email Address</span>
-               <input type="text" class="form-control Textbox-Style" id="UsersAccountForm_TxtEmailAddress"/>
-			</div>
-		  </div>
-         </div>
-		 
-        <div class="row mb-1">
-           <div class="col-md-6 mb-1">
-		     <div class="input-group">
-		       <span class="input-group-text Min-Width-125 Label-Caption">Username</span>
-               <input type="text" class="form-control Textbox-Style" id="UsersAccountForm_TxtUsername"/>
-			</div>
-		  </div>
-		  
-           <div class="col-md-6 mb-1">
-		     <div class="input-group">
-		       <span class="input-group-text Min-Width-125 Label-Caption">Password</span>
-               <input type="password" class="form-control Textbox-Style" id="UsersAccountForm_TxtPassword"/>
-			</div>
-		  </div>
-        
-       </div>
-	   
-        <div class="row mb-1">
-           <div class="col-md-6 mb-1">
-		     <div class="input-group">
-		       <span class="input-group-text Min-Width-125 Label-Caption">Userlevel</span>
-			    <select class="form-select Textbox-Style" id="UsersAccountForm_TxtUserlevel">
-				  <option></option>
-				  <option>Administrator</option>
-				  <option>Developer</option>
-				  <option>Encoder-1</option>
-				  <option>Encoder-2</option>
-                 </select>
-			</div>
-		  </div>
-		  
-           <div class="col-md-6 mb-1">
-		     <div class="input-group">
-		       <span class="input-group-text Min-Width-125 Label-Caption">Status</span>
-               <select class="form-select Textbox-Style" id="UsersAccountForm_TxtStatus">
-				  <option></option>
-				  <option>Active</option>
-				  <option>Inactive</option>
-			   </select>
-			</div>
-		  </div>
-        
-       </div> 
-     </div> 
-	  
-	     <div class="row BackColor-DarkBlue">
-           <div class="col-md-6 mb-1"></div>  
-		    <div class="col-md-6 mb-1" style="padding:4px; padding-right:20px; padding-left:20px;">
-		      <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                <button Id="UsersAccountForm_BntNEW" class="btn Button-Style" type="button" style="padding-right:40px;"><i class="fas fa-file fa-lg padding-4"></i>&nbsp;NEW</button>
-                <button Id="UsersAccountForm_BntSAVE" class="btn Button-Style" type="button" style="padding-right:30px;"><i class="fa fa-floppy-disk fa-lg padding-4"></i>&nbsp;SAVE</button>
-				<button Id="UsersAccountForm_BntSEARCH" class="btn Button-Style" type="button"><i class="fa fa-magnifying-glass fa-lg padding-4"></i>&nbsp;SEARCH</button>
-              </div>
-		  </div>
-       </div> 
-	   
-     </div> 
-   </div> <!-- Inner row -->
-   </div> <!-- Outer container -->
+<div Id= "UsersAccountForm"></div>
+<section>
+    <div class="flex flex-col justify-center items-center f-screen pt-2 px-2">
+        <div class="w-full bg-gray-50 rounded-lg shadow  md:mt-0 sm:max-w-md xl:p-0 ">
+            <div class="p-6 space-y-4 md:space-y-6 sm:p-8 ">
+                <h1 class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl ">
+                  Create an account
+                </h1>
+                <hr />
+                <form class="space-y-4 gap-x-2  grid grid-cols-2" action="#" method="POST">
+                    <div><input type="hidden" id="UsersAccountForm_TxtRecordID" value="0000"/>
+                        <input type="hidden" id="UsersAccountForm_TxtStatus" value="Active"/>
+                        <label for="LoginForm_TxtUsername" class="block mb-2 text-sm font-medium text-gray-900 ">Student ID</label>
+                        <input type="text" name="schoolID" id="UsersAccountForm_TxtUserName" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5" placeholder="19-A-01305" required="">
+                    </div>
+                    <div class="col-span-full"></div>
+                    <div>
+                        <label for="UsersAccountForm_TxtName" class="block mb-2 text-sm font-medium text-gray-900 ">First name</label>
+                        <input type="text" name="UsersAccountForm_TxtName" id="UsersAccountForm_TxtName"  class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 " required="">
+                    </div>
+                    <div>
+                        <label for="UsersAccountForm_TxtLastName" class="block mb-2 text-sm font-medium text-gray-900 ">Last name</label>
+                        <input type="text" name="UsersAccountForm_TxtLastName" id="UsersAccountForm_TxtLastName"  class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 " required="">
+                    </div>
+                    <div class="col-span-full">
+                        <select class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 " id="UsersAccountForm_Program" required="">
+
+                                <option >Computer Science</option>
+                                <option>Information System</option>
+
+                        </select>
+                    </div>
+                    <div class="col-span-full">
+                        <label for="UsersAccountForm_TxtEmail" class="block mb-2 text-sm font-medium text-gray-900 ">Email</label>
+                        <input type="text" name="UsersAccountForm_TxtEmail" id="UsersAccountForm_TxtEmailAddress"  class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 " required="">
+                    </div>
+                    <div class="col-span-full">
+                        <label for="UsersAccountForm_TxtPassword" class="block mb-2 text-sm font-medium text-gray-900 ">Password</label>
+                        <input type="password" name="UsersAccountForm_TxtPassword" id="UsersAccountForm_TxtPassword"  class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 " required="">
+                    </div>
+                    <div class="col-span-full"> 
+                        <button type="button" class="w-full text-white bg-purple-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center " id="UsersAccountForm_BntSAVE">Create an account</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+</div>

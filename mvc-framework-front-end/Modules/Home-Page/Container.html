@@ -14,7 +14,7 @@
 					
 			<link rel="icon" href="Images/favicon.ico"  type="image/x-icon" />
 			<link rel="shortcut icon" href="Images/favicon.ico" type="image/x-icon" />
-			
+			<link rel="stylesheet" href="Styles/css/tailwind.output.css" />
 			<link rel="stylesheet" href="Styles/Bootstrap.5.2.0/Bootstrap.css">
 			<script type="text/javascript" src="Styles/Bootstrap.5.2.0/Bootstrap.bundle.js"></script>
 			
@@ -59,8 +59,10 @@
                    
 				function Show_LoginForm()
 					{
-			       		JS_File.Load('Modules/Users-Account/Users-Account-Login-Events.js').then( res => {Login_User();}).catch(err =>{;});
-				  	}
+					alert("djfk")
+			       		JS_File.Load('Modules/Users-Account/Users-Account-Login-Events.js').then( res => {Login_User();}).catch(err =>{;});	
+				  	
+				}
 				  
 				function Clear_JWToken()
 				{
@@ -86,7 +88,7 @@
 						}
 
 
-						
+					
 					CheckSession();
 
 				
